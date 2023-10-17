@@ -1,6 +1,6 @@
 
 
-const Navbar = () => {
+const Brands = () => {
     return (
         <div>
             
@@ -8,4 +8,5 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default Brands;
+
