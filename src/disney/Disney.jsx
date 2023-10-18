@@ -63,6 +63,10 @@ const Disney = () => {
                                 <p className=" text-white" >{item?.price}</p>
                                 <p className=" text-white">Rating: {item?.rating}</p>
                             </div>
+                            <div className="flex gap-2 items-center justify-center mt-2">
+                                <button className=" p-2 text-gray-100 glass rounded-md">Details</button>
+                                <button className=" p-2 text-gray-100 glass rounded-md">Update</button>
+                            </div>
                         </div>
                     ))
                 }
