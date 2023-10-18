@@ -2,8 +2,8 @@
 
 const Banner = () => {
     return (
-        <div>
-            
+        <div >
+            <img src="https://i.ibb.co/9y88gyw/banner.jpg" alt="" />
         </div>
     );
 };

@@ -22,11 +22,18 @@ const AllContext = ({children}) => {
         }
     },[])
 
+    
+    const logOut = () => {
+        return signOut(auth);
+    }
+
     const toAll = {
             auth,
             user,
             loading,
+            logOut,
     }
+    
     return <Context.Provider value={toAll}>{children}</Context.Provider>;
 };
 

@@ -5,14 +5,9 @@
       "image": "https://i.ibb.co/LZVd8tc/netflix.jpg"
     },
     {
-      "id": 2,
-      "name": "Apple TV+",
-      "image": "https://i.ibb.co/D5NnSzT/apple-tv-plus.jpg"
-    },
-    {
-      "id": 3,
-      "name": "Chorki",
-      "image": "https://i.ibb.co/0VQTS23/chorki.jpg"
+      "id": 5,
+      "name": "Amazon Prime Video",
+      "image": "https://i.ibb.co/dkXXsDv/amazon-prime.jpg"
     },
     {
       "id": 4,
@@ -20,13 +15,18 @@
       "image": "https://i.ibb.co/92BNjmC/hulu.jpg"
     },
     {
-      "id": 5,
-      "name": "Amazon Prime Video",
-      "image": "https://i.ibb.co/dkXXsDv/amazon-prime.jpg"
-    },
-    {
       "id": 6,
       "name": "HBO Max",
       "image": "https://i.ibb.co/Y8gPqxS/hbo-max.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Disney +",
+      "image": "https://i.ibb.co/cCNY3Nh/disney-plus.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Chorki",
+      "image": "https://i.ibb.co/0VQTS23/chorki.jpg"
     }
   ]
