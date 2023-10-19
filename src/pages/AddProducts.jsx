@@ -16,20 +16,93 @@ const AddProducts = () => {
         const image = form.image.value;
         const selectedBrand = form.selectedBrand.value;
 
-        const newProduct = {name, brandName, type, price, rating, details, image, selectedBrand}
+        const newProduct = {name, brandName, type, price, rating, details, image}
         console.log(newProduct)
 
-    //     fetch('http://localhost:5000/products', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type' : 'application/json'
-    //   },
-    //   body: JSON.stringify(newProduct)
-    // })
-    // .then(res => res.json())
-    // .then(data => {
-    //   console.log(data)
-    // })
+        if (selectedBrand == "netflix"){
+            fetch('http://localhost:3000/netflix', {
+                method: 'POST',
+                headers: {
+                  'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify(newProduct)
+              })
+              .then(res => res.json())
+              .then(data => {
+                console.log(data)
+              })
+        }
+
+        if (selectedBrand == "hulu"){
+            fetch('http://localhost:3000/hulu', {
+                method: 'POST',
+                headers: {
+                  'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify(newProduct)
+              })
+              .then(res => res.json())
+              .then(data => {
+                console.log(data)
+              })
+        }
+
+        if (selectedBrand == "hbo"){
+            fetch('http://localhost:3000/hbo', {
+                method: 'POST',
+                headers: {
+                  'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify(newProduct)
+              })
+              .then(res => res.json())
+              .then(data => {
+                console.log(data)
+              })
+        }
+
+        if (selectedBrand == "chorki"){
+            fetch('http://localhost:3000/chorki', {
+                method: 'POST',
+                headers: {
+                  'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify(newProduct)
+              })
+              .then(res => res.json())
+              .then(data => {
+                console.log(data)
+              })
+        }
+
+        if (selectedBrand == "amazon"){
+            fetch('http://localhost:3000/amazon', {
+                method: 'POST',
+                headers: {
+                  'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify(newProduct)
+              })
+              .then(res => res.json())
+              .then(data => {
+                console.log(data)
+              })
+        }
+
+        if (selectedBrand == "disney"){
+            fetch('http://localhost:3000/disney', {
+                method: 'POST',
+                headers: {
+                  'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify(newProduct)
+              })
+              .then(res => res.json())
+              .then(data => {
+                console.log(data)
+              })
+        }
+
 
     }
 
