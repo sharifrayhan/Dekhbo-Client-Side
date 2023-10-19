@@ -5,24 +5,20 @@ import { Context } from '../context/AllContext';
 
 const Register = () => {
 
-  const { handleRegister, registerError, termsError, googleSignIn, setGoogleSuccess } = useContext(Context)
+  const { handleRegister, registerError, termsError, googleSignIn} = useContext(Context)
 
   const navigate = useNavigate()
  
   const handleGoogleSignIn = () => {
     googleSignIn()
     .then(result=>{
-        setGoogleSuccess(result.user)
-       
-
+        console.log(result.user)
+    
     })
     .catch(error=>{
         console.error(error)
     })
   }
-
-   
-
   
     return (
 <div className="  max-h-auto pb-10  bg-[url(https://i.ibb.co/gvq2whv/black.jpg)] bg-cover ">

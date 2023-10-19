@@ -3,15 +3,13 @@ import { useContext } from "react";
 import { Context } from "../context/AllContext";
 
 const Navbar = () => {
-    const { user, logOut, registerSuccess } = useContext(Context);
+    const { user, logOut } = useContext(Context);
 
-    // console.log(registerSuccess.photoURL);
-    // const userName = user?.displayName;
-    // const userPhoto = user?.photoURL;
 
-    // const handleLogOut = () => {
-    //     logOut();
-    //   };
+
+    const handleLogOut = () => {
+        logOut();
+      };
 
     const navLinks = (
         <>
@@ -67,17 +65,7 @@ const Navbar = () => {
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{navLinks}</ul>
           </div>
-          {/* <div className="navbar-end flex gap-2">
-            {user && userName && userPhoto && (
-              <div className=" flex items-center gap-2 glass px-3 p-1 rounded-md">
-                <img
-                  className=" w-9 h-9 avatar rounded-full "
-                  src={userPhoto}
-                  alt=""
-                />
-                <h1 className=" text-white text-xs">{userName}</h1>
-              </div>
-            )}
+          <div className="navbar-end flex gap-2">
             {user ? (
               <button
                 onClick={handleLogOut}
@@ -92,7 +80,7 @@ const Navbar = () => {
                 </button>
               </Link>
             )}
-          </div> */}
+          </div>
         </div>
       </div>
     );

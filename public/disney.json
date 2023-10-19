@@ -6,7 +6,8 @@
       "type": "Subscription Package",
       "image": "https://i.ibb.co/G5HNwLF/monthly.png",
       "price": "500 BDT",
-      "rating": 4.5
+      "rating": 4.5,
+      "selectedBrand": "disney"
     },
     {
       "id": 2,
@@ -15,7 +16,8 @@
       "type": "Subscription Package",
       "image": "https://i.ibb.co/F7n8Y7b/quarterly.png",
       "price": "1200 BDT",
-      "rating": 4.5
+      "rating": 4.5,
+      "selectedBrand": "disney"
     },
     {
       "id": 3,
@@ -24,7 +26,8 @@
       "type": "Subscription Package",
       "image": "https://i.ibb.co/rmbW14r/half-yearly.png",
       "price": "2500 BDT",
-      "rating": 4.5
+      "rating": 4.5,
+      "selectedBrand": "disney"
     },
     {
       "id": 4,
@@ -33,7 +36,8 @@
       "type": "Subscription Package",
       "image": "https://i.ibb.co/KGWGK03/yearly.png",
       "price": "4000 BDT",
-      "rating": 4.5
+      "rating": 4.5,
+      "selectedBrand": "disney"
     }
   ]
   

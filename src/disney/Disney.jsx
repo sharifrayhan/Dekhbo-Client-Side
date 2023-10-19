@@ -1,6 +1,7 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 import Slider from "react-slick";
@@ -11,7 +12,7 @@ const Disney = () => {
     const [items, setItems] = useState([])
 
     useEffect(()=>{
-        fetch('disney.json')
+        fetch('http://localhost:3000/disney')
         .then(res => res.json())
         .then(data => setItems(data))
 
@@ -65,7 +66,7 @@ const Disney = () => {
                                 <p className=" text-white">Rating: {item?.rating}</p>
                             </div>
                             <div className="flex gap-2 items-center justify-center mt-2">
-                                <button className=" p-2 text-gray-100 glass rounded-md">Details</button>
+                                <Link to={`/Details/${item?._id}`}><button className=" p-2 text-gray-100 glass rounded-md">Details</button></Link>
                                 <button className=" p-2 text-gray-100 glass rounded-md">Update</button>
                             </div>
                         </div>

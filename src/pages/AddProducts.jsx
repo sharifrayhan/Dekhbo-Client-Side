@@ -16,7 +16,7 @@ const AddProducts = () => {
         const image = form.image.value;
         const selectedBrand = form.selectedBrand.value;
 
-        const newProduct = {name, brandName, type, price, rating, details, image}
+        const newProduct = {name, brandName, type, price, rating, details, image, selectedBrand}
         console.log(newProduct)
 
         if (selectedBrand == "netflix"){
