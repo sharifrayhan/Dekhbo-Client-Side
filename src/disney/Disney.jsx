@@ -67,7 +67,7 @@ const Disney = () => {
                             </div>
                             <div className="flex gap-2 items-center justify-center mt-2">
                                 <Link to={`/Details/${item?._id}`}><button className=" p-2 text-gray-100 glass rounded-md">Details</button></Link>
-                                <button className=" p-2 text-gray-100 glass rounded-md">Update</button>
+                                <Link to={`/UpdateProducts/${item?._id}`}><button className=" p-2 text-gray-100 glass rounded-md">Update</button></Link>
                             </div>
                         </div>
                     ))

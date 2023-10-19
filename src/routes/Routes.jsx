@@ -14,6 +14,7 @@ import Disney from "../disney/Disney"
 import Hulu from "../hulu/Hulu"
 import Hbo from "../hbo/Hbo"
 import Netflix from "../netflix/Netflix"
+import UpdateProducts from "../pages/UpdateProducts";
 
 const router = createBrowserRouter([
   {
@@ -38,8 +39,14 @@ const router = createBrowserRouter([
         element: <AddProducts></AddProducts>,
       },
       {
+        path: "/UpdateProducts/:_id",
+        element: <UpdateProducts></UpdateProducts>,
+        loader: () => fetch("http://localhost:3000/allproducts"),
+      },
+      {
         path: "/MyCart",
         element: <MyCart></MyCart>,
+        loader: () => fetch("http://localhost:3000/cart")
       },
       {
         path: "/Login",

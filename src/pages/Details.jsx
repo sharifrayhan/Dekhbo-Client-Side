@@ -1,9 +1,13 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import { Context } from '../context/AllContext';
 
 const Details = () => {
+    const {user} = useContext(Context)
+    const userEmail = user?.email;
+
     const [items, setItems] = useState([])
     useEffect(() => {
         fetch("http://localhost:3000/allproducts")
@@ -25,6 +29,9 @@ const Details = () => {
     console.log(card)
 
     const handleAddToCart = ()=>{
+
+      card.userEmail = userEmail;
+      
         fetch('http://localhost:3000/cart', {
             method: 'POST',
             headers: {
@@ -37,6 +44,7 @@ const Details = () => {
             console.log(data)
           })
     }
+
     return (
         <div>
             <Navbar></Navbar>

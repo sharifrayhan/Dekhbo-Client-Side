@@ -13,13 +13,23 @@ const AllContext = ({children}) => {
     const [loading, setLoading] = useState(true)
     const [registerError, setRegisterError] = useState('')
     const [termsError, setTermsError] = useState('')
-
+console.log(user)
 
     const registerSuccessModal = ()=>{
         Swal.fire({
           position: 'top-center',
           icon: 'success',
           title: 'Registration Successfull, Please Login to continue',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+
+    const loginSuccessModal = ()=>{
+        Swal.fire({
+          position: 'top-center',
+          icon: 'success',
+          title: 'Successfully Logged in',
           showConfirmButton: false,
           timer: 1500
         })
@@ -118,8 +128,7 @@ const AllContext = ({children}) => {
           signIn(email, password, navigate, location)
             .then(result => {
               console.log(result.user);
-             
-      
+              loginSuccessModal()
               navigate(location?.state ? location.state : "/");
             })
             .catch(error => {
