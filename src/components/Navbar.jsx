@@ -13,13 +13,13 @@ const Navbar = () => {
 
     const navLinks = (
         <>
-          <li className=" text-white ">
+          <li className={ `${theme == "dark" ? "text-slate-200" : "text-[#162028]"}`} >
             <Link to="/">Home</Link>
           </li>
-          <li className=" text-white  ">
+          <li className={ `${theme == "dark" ? "text-slate-200" : "text-[#162028]"}`}>
             <Link to="/AddProducts">Add Product</Link>
           </li>
-          <li className=" text-white  ">
+          <li className={ `${theme == "dark" ? "text-slate-200" : "text-[#162028]"}`}>
             <Link to="/MyCart">My Cart</Link>
           </li>
         </>
@@ -69,13 +69,13 @@ const Navbar = () => {
             {user ? (
               <button
                 onClick={handleLogOut}
-                className="py-1 md:py-3 lg:py-3 px-1 md:px-4 lg:px-4 text-xs md:text-sm lg:text-sm glass rounded-md hover:bg-gradient-to-r from-[#06beb6]  to-[#48b1bf] text-white"
+                className={`py-1 md:py-3 lg:py-3 px-1 md:px-4 lg:px-4 text-xs md:text-sm lg:text-sm glass rounded-md hover:bg-gradient-to-r from-[#06beb6]  to-[#48b1bf] ${theme == "dark" ? "text-slate-200" : "text-[#162028]"} `}
               >
                 Sign Out
               </button>
             ) : (
               <Link to="/Login">
-                <button className=" py-1 md:py-3 lg:py-3 px-1 md:px-4 lg:px-4 text-xs md:text-sm lg:text-sm glass rounded-md hover:bg-gradient-to-r from-[#06beb6]  to-[#48b1bf] text-white">
+                <button className={`py-1 md:py-3 lg:py-3 px-1 md:px-4 lg:px-4 text-xs md:text-sm lg:text-sm glass rounded-md hover:bg-gradient-to-r from-[#06beb6]  to-[#48b1bf] ${theme == "dark" ? "text-slate-200" : "text-[#162028]"}`}>
                   Log In
                 </button>
               </Link>

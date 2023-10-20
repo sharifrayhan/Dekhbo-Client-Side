@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import { useContext } from "react";
+import { Context } from "../context/AllContext";
 
 const NowPlaying = () => {
+
+    const {theme} = useContext(Context);
 
     var settings = {
         dots: true,
@@ -40,8 +44,8 @@ const NowPlaying = () => {
       };
 
     return (
-        <div className="p-10 bg-[#0D1117]">
-            <center className="mb-5"><h1 className="text-white font-bold "><span className=" text-2xl">Now Playing</span> <br />On Your Favorite Streaming Platforms</h1></center>
+        <div className={`p-10 ${theme == "dark" ? "bg-[#0D1117]" : "bg-slate-200"}`}>
+            <center className="mb-5"><h1 className={`${theme == "dark" ? "text-slate-200" : "text-[#162028]"} font-bold `}><span className=" text-2xl">Now Playing</span> <br />On Your Favorite Streaming Platforms</h1></center>
             <div className="">
                 <Slider  {...settings}>
                     <div >
