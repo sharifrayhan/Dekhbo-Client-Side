@@ -12,8 +12,13 @@ const AllContext = ({children}) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
     const [registerError, setRegisterError] = useState('')
+    const [theme, setTheme] = useState("light");
     const [termsError, setTermsError] = useState('')
 console.log(user)
+
+const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
     const registerSuccessModal = ()=>{
         Swal.fire({
@@ -175,6 +180,8 @@ console.log(user)
             handleGoogleSignIn,
             registerError, 
             termsError,
+            toggleTheme,
+            theme
     }
     
     return <Context.Provider value={toAll}>{children}</Context.Provider>;

@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Context } from "../context/AllContext";
 
 const Navbar = () => {
-    const { user, logOut } = useContext(Context);
+    const { user, logOut, toggleTheme, theme } = useContext(Context);
 
 
 

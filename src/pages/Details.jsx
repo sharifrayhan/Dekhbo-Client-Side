@@ -1,6 +1,6 @@
 
 import { useState, useEffect, useContext } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLoaderData, useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { Context } from '../context/AllContext';
 
@@ -8,12 +8,13 @@ const Details = () => {
     const {user} = useContext(Context)
     const userEmail = user?.email;
 
-    const [items, setItems] = useState([])
-    useEffect(() => {
-        fetch("http://localhost:3000/allproducts")
-        .then(res=> res.json())
-        .then(data => setItems(data))
-    }, []);
+    const items = useLoaderData()
+    // const [items, setItems] = useState([])
+    // useEffect(() => {
+    //     fetch("http://localhost:3000/allproducts")
+    //     .then(res=> res.json())
+    //     .then(data => setItems(data))
+    // }, []);
 
     const [card, setCard] = useState();
   
@@ -28,16 +29,16 @@ const Details = () => {
 
     console.log(card)
 
-    const handleAddToCart = ()=>{
+    const handleAddToCart = async ()=>{
 
       card.userEmail = userEmail;
-      
-        fetch('http://localhost:3000/cart', {
+
+        await fetch('http://localhost:3000/cart', {
             method: 'POST',
             headers: {
               'Content-Type' : 'application/json'
             },
-            body: JSON.stringify(card)
+            body: await JSON.stringify(card)
           })
           .then(res => res.json())
           .then(data => {
@@ -49,13 +50,13 @@ const Details = () => {
         <div>
             <Navbar></Navbar>
             <div className='flex items-center justify-center rounded-md p-5 bg-[url(https://i.ibb.co/2MYfNMW/white.jpg)] bg-cover'>
-                <div className='rounded-md flex gap-3 p-5 bg-[#162028] w-[1000px]'>
-                    <img className=' rounded-md h-[500px]' src={card?.image} alt="" />
-                    <div>
-                        <p className=' font-bold text-2xl text-[#DADC55]'>{card?.name}</p>
-                        <p className=' text-white'>Price: {card?.price}</p>
-                        <p className='text-white'>{card?.description}</p>
-                        <p className='text-white'>{card?.rating}</p>
+                <div className='rounded-md flex flex-col gap-3 p-5 w-[500px]  bg-[#162028] '>
+                    <img className=' rounded-md h-[300px] w-[300px] md:h-[450px] md:w-[450px] lg:h-[500px] lg:w-[500px]'  src={card?.image} alt="" />
+                    <div className=' text-center'>
+                        <p className='mb-2 font-bold text-2xl text-[#DADC55]'>{card?.name}</p>
+                        <p className='mb-2 text-white'>Price: {card?.price}</p>
+                        <p className='mb-2 text-white'>{card?.details}</p>
+                        <p className='mb-2 text-white'>Rating: {card?.rating}</p>
                         <Link><button className="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600" onClick={handleAddToCart}>Add To Cart</button></Link>
                     </div>
                 </div>

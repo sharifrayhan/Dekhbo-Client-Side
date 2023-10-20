@@ -1,33 +1,20 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-
-
+import { Link, useLoaderData } from "react-router-dom";
 import Slider from "react-slick";
 import Navbar from "../components/Navbar";
 
 const Disney = () => {
 
-    const [items, setItems] = useState([])
-
-    useEffect(()=>{
-        fetch('http://localhost:3000/disney')
-        .then(res => res.json())
-        .then(data => setItems(data))
-
-    },[])
-
+    const items = useLoaderData()
     var settings = {
         dots: true,
         arrows: true,
-    //     prevArrow: '<button class="slide-arrow prev-arrow"></button>',
-    // nextArrow: '<button class="slide-arrow next-arrow"></button>',
         infinite: true,
         speed: 500,
         fade: true,
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 1,
+        slidesToScroll: 1,
         cssEase: 'linear',
         autoplay: true,
         autoplaySpeed: 2500,

@@ -28,15 +28,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/Details/:_id",
-        element: (
- 
-            <Details></Details> 
-      
-        ),
+        element: 
+          <PrivateRoute><Details></Details></PrivateRoute>,
+          loader: ()=> fetch("http://localhost:3000/allproducts"),
       },
       {
         path: "/AddProducts",
-        element: <AddProducts></AddProducts>,
+        element: <PrivateRoute><AddProducts></AddProducts></PrivateRoute>,
       },
       {
         path: "/UpdateProducts/:_id",
@@ -45,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/MyCart",
-        element: <MyCart></MyCart>,
+        element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
         loader: () => fetch("http://localhost:3000/cart")
       },
       {
@@ -59,26 +57,32 @@ const router = createBrowserRouter([
       {
         path: "/5",
         element: <Amazon></Amazon>,
+        loader: () => fetch('http://localhost:3000/amazon'),
       },
       {
         path: "/3",
         element: <Chorki></Chorki>,
+        loader: () => fetch('http://localhost:3000/chorki'),
       },
       {
         path: "/2",
         element: <Disney></Disney>,
+        loader: () => fetch('http://localhost:3000/disney'),
       },
       {
         path: "/4",
         element: <Hulu></Hulu>,
+        loader: () => fetch('http://localhost:3000/hulu'),
       },
       {
         path: "/6",
         element: <Hbo></Hbo>,
+        loader: () => fetch('http://localhost:3000/hbo'),
       },
       {
         path: "/1",
         element: <Netflix></Netflix>,
+        loader: () => fetch('http://localhost:3000/netflix'),
       },
     ],
   },
