@@ -27,7 +27,7 @@ const Navbar = () => {
 
     return (
         <div className=" sticky z-20">
-        <div className="navbar p-0   flex items-center px-2 md:px-9 lg:px-10 mx-auto bg-[#162028]  ">
+        <div className={`navbar p-0  flex items-center px-2 md:px-9 lg:px-10 mx-auto ${theme == "dark" ? "bg-[#162028]" : "bg-slate-200"}`}>
           <div className="navbar-start">
             <div className="dropdown ">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -80,6 +80,7 @@ const Navbar = () => {
                 </button>
               </Link>
             )}
+            <button onClick={toggleTheme} className=" px-3 py-2 gap-2 rounded-md bg-slate-500 flex hover:bg-gradient-to-r from-[#06beb6]  to-[#162028]"><img className=" h-6  " src="https://i.ibb.co/vXN6Dhz/day.png" alt="" /><img className=" h-5" src="https://i.ibb.co/hM67vHc/night.png" alt="" /></button>
           </div>
         </div>
       </div>

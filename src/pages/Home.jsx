@@ -3,6 +3,7 @@ import Brands from "../components/Brands";
 import Navbar from "../components/Navbar";
 import Footer from "./Footer";
 import NowPlaying from "./NowPlaying";
+import TopNews from "./TopNews";
 
 
 
@@ -15,6 +16,7 @@ const Home = () => {
             <Banner></Banner>
             <Brands></Brands>
             <NowPlaying></NowPlaying>
+            <TopNews></TopNews>
             <Footer></Footer>
         </div>
     );
