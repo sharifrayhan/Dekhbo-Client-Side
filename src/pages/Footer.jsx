@@ -9,7 +9,7 @@ const Footer = () => {
         <div>
             <footer className={`footer footer-center p-10 ${theme == "dark" ? "bg-[#162028]" : "bg-slate-200"} text-primary-content`}>
   <aside>
-    <img className=" h-3 md:h-5 lg:h-7" src="https://i.ibb.co/C0726np/logo-blue.png" alt="" />
+    <img className=" h-3 md:h-5 lg:h-5" src="https://i.ibb.co/C0726np/logo-blue.png" alt="" />
     <p className={`font-bold ${theme == "dark" ? "text-slate-200" : "text-[#162028]"}`}>
      <br/>Providing streaming services since 2018
     </p> 

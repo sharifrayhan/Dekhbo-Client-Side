@@ -45,7 +45,7 @@ const NowPlaying = () => {
 
     return (
         <div className={`p-10 ${theme == "dark" ? "bg-[#0D1117]" : "bg-slate-200"}`}>
-            <center className="mb-5"><h1 className={`${theme == "dark" ? "text-slate-200" : "text-[#162028]"} font-bold `}><span className=" text-2xl">Now Playing</span> <br />On Your Favorite Streaming Platforms</h1></center>
+            <center className="mb-5"><h1 className={`${theme == "dark" ? "text-slate-200" : "text-[#162028]"} font-bold `}><span className=" text-[12px] md:text-[20px] lg:text-[30px]">Now Playing</span> <br /><span className=" text-[10px] md:text-[14px] lg:text-[16px]">On Your Favorite Streaming Platforms</span></h1></center>
             <div className="">
                 <Slider  {...settings}>
                     <div >

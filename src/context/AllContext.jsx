@@ -66,6 +66,7 @@ const toggleTheme = () => {
       const name = form.get('name');
       const email = form.get('email');
       const password = form.get('password');
+      const url = form.get('url');
       const checkbox = form.get('checkbox');
       console.log(email,password)
       setRegisterError('')
@@ -96,7 +97,8 @@ const toggleTheme = () => {
       .then(result=>{
           console.log(result.user)
           updateProfile(result.user,{
-            displayName: name
+            displayName: name,
+            photoURL: url,
           })
           registerSuccessModal()
           navigate('/Login')

@@ -5,7 +5,8 @@ import { Context } from "../context/AllContext";
 const Navbar = () => {
     const { user, logOut, toggleTheme, theme } = useContext(Context);
 
-
+    const userName = user?.displayName;
+    const userPhoto = user?.photoURL;
 
     const handleLogOut = () => {
         logOut();
@@ -66,6 +67,16 @@ const Navbar = () => {
             <ul className="menu menu-horizontal px-1">{navLinks}</ul>
           </div>
           <div className="navbar-end flex gap-2">
+          {user && userName && userPhoto && (
+            <div className=" flex items-center gap-2 glass px-3 p-1 rounded-md">
+              <img
+                className=" w-9 h-9 avatar rounded-full "
+                src={userPhoto}
+                alt=""
+              />
+              <h1 className={` ${theme == "dark" ? "text-slate-200" : "text-[#162028]"} text-xs`}>{userName}</h1>
+            </div>
+          )}
             {user ? (
               <button
                 onClick={handleLogOut}

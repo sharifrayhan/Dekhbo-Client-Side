@@ -41,6 +41,12 @@ const Register = () => {
             <input className=" glass w-full placeholder-slate-200 py-3 px-3" required type="password" id="password" name="password" placeholder="Enter your password" />
              <p className=' text-red-600 '>{registerError}</p>
           </div>
+
+          <div>
+            <h1 className=" mb-2 text-slate-200 font-semibold">Image URL</h1>
+            <input className=" glass w-full placeholder-slate-200 py-3 px-3" required type="text" id="url" name="url" placeholder="Enter your photo url" />
+          </div>
+
           <div >
             <div className="flex gap-2">
             <input type="checkbox" id='checkbox' name='checkbox'/> <p className=' text-white '>Accept Term & Conditions</p>
