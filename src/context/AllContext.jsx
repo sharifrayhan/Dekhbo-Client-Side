@@ -12,7 +12,7 @@ const AllContext = ({children}) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
     const [registerError, setRegisterError] = useState('')
-    const [theme, setTheme] = useState("light");
+    const [theme, setTheme] = useState("dark");
     const [termsError, setTermsError] = useState('')
 console.log(user)
 

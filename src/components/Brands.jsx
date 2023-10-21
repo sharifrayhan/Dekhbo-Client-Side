@@ -17,8 +17,8 @@ useEffect(()=>{
 },[])
     return (
         <div className={` p-1 ${theme == "dark" ? "bg-[#0D1117]" : "bg-white"}`}>
-                        <center className="my-5"><h1 className={`${theme == "dark" ? "text-slate-200" : "text-[#162028]"} font-bold `}><span className=" text-2xl">Our Services</span></h1></center>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-5 gap-6 mx-2 md:mx-10 lg:mx-24">
+                        <center className="my-5"><h1 className={`${theme == "dark" ? "text-slate-200" : "text-[#162028]"} font-bold text-[12px] md:text-[20px] lg:text-[30px] `}><span>Our Services</span></h1></center>
+            <div className="grid glass p-5 rounded-md grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-5 gap-6 mx-2 md:mx-10 lg:mx-24">
 
             {
                 brands.map(brand =>(

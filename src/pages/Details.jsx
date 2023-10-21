@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { Context } from '../context/AllContext';
+import Swal from 'sweetalert2'
 
 const Details = () => {
     const {user} = useContext(Context)
@@ -15,6 +16,16 @@ const Details = () => {
     //     .then(res=> res.json())
     //     .then(data => setItems(data))
     // }, []);
+
+const showError =()=>{
+    Swal.fire({
+        position: 'top-center',
+        icon: 'error',
+        title: 'Failed To Add To The Cart',
+        showConfirmButton: false,
+        timer: 1500,
+    });
+}
 
     const [card, setCard] = useState();
   
@@ -29,22 +40,40 @@ const Details = () => {
 
     console.log(card)
 
-    const handleAddToCart = async ()=>{
+    const handleAddToCart = async () => {
+        card.userEmail = userEmail;
+    
+        try {
+            const response = await fetch('http://localhost:3000/cart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(card),
+            });
+    
+            if (response.ok) {
+                const data = await response.json();
+                if (data.acknowledged) {
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Successfully Added To The Cart',
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+                } else {
+                    showError()
+                }
+            } else {
+                showError()
+            }
+        } catch (error) {
+            showError()
+        }
+    };
+    
 
-      card.userEmail = userEmail;
-
-        await fetch('http://localhost:3000/cart', {
-            method: 'POST',
-            headers: {
-              'Content-Type' : 'application/json'
-            },
-            body: await JSON.stringify(card)
-          })
-          .then(res => res.json())
-          .then(data => {
-            console.log(data)
-          })
-    }
 
     return (
         <div>

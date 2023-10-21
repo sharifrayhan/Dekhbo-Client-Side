@@ -19,7 +19,8 @@ const MyCart = () => {
 
     console.log(items)
 
-    const [userItems, setUserItems] = useState([]);
+    const [userItems, setUserItems] = useState([]); 
+
 
     useEffect(() => {
         if (items) {
@@ -55,6 +56,8 @@ const MyCart = () => {
                 'Your file has been deleted.',
                 'success'
               )
+              const thoseremaining = userItems?.filter(uItem => uItem._id !== _id)
+              setUserItems(thoseremaining)
                 }
                 else{
                     Swal.fire(
@@ -69,20 +72,20 @@ const MyCart = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="flex flex-col h-max items-center justify-center  p-5 bg-[url(https://i.ibb.co/2MYfNMW/white.jpg)] bg-cover ">
+            <div className="flex flex-col h-screen items-center justify-start  p-5 bg-[url(https://i.ibb.co/2MYfNMW/white.jpg)] bg-cover ">
             {
                 userItems.length > 0 ? (
                     userItems.map((userItem) => (
                         <div key={userItem?._id} className='flex items-center justify-center rounded-md p-5 '>
-                            <div className='rounded-md flex gap-3 p-5 bg-[#162028] w-[1000px]'>
-                                <img className='rounded-md h-[200px]' src={userItem?.image} alt="" />
+                            <div className='rounded-md flex gap-3 p-5 bg-[#162028] w-[300px] md:w-[700px] lg:w-[1000px]'>
+                                <img className='rounded-md h-[100px] lg:h-[200px]' src={userItem?.image} alt="" />
                                 <div>
-                                    <p className='font-bold text-2xl text-[#DADC55]'>{userItem?.name}</p>
+                                    <p className='font-bold text-md md:text-xl lg:text-2xl text-[#DADC55]'>{userItem?.name}</p>
                                     <p className='text-white'>Price: {userItem?.price}</p>
                                     <p className='text-white'>{userItem?.description}</p>
                                     <p className='text-white'>{userItem?.rating}</p>
-                                    <button className="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600" onClick={() => handleDeleteItem(userItem?._id)}>
-                                        <img className="h-[100px]" src="https://i.ibb.co/n3qq1pk/delete-1.png" alt="" />
+                                    <button className="bg-blue-500 text-white font-semibold py-1 px-2 rounded hover:bg-blue-600" onClick={() => handleDeleteItem(userItem?._id)}>
+                                        <img className="h-[20px]" src="https://i.ibb.co/n3qq1pk/delete-1.png" alt="" />
                                     </button>
                                 </div>
                             </div>

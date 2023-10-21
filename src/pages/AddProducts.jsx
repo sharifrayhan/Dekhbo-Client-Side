@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import Footer from "./Footer";
 import Navbar from "../components/Navbar";
 
@@ -117,7 +117,7 @@ const AddProducts = () => {
                 <div className=" py-10 px-14  bg-[#162028] rounded-md">
                     <div className=" text-center my-5">
                         <h1 className=" my-3 text-4xl font-medium text-gray-200 font-rancho">Add New Product</h1>
-                        <p className="text-gray-200">Welcome to the Add Product form! You're just a few steps away from adding your product to one of our six popular brands. Fill up the below form to add your product</p>
+                        <p className="text-gray-200">Welcome to the Add Product form! You are just a few steps away from adding your product to one of our six popular brands. Fill up the below form to add your product</p>
                     </div>
 
                     <form onSubmit={handleAddProduct} className="">

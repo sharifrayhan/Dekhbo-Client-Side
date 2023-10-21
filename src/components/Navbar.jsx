@@ -56,7 +56,7 @@ const Navbar = () => {
             </div>
             <div>
               <img
-                className=" h-3 md:h-5 lg:h-7"
+                className=" h-3 md:h-5 lg:h-5"
                 src="https://i.ibb.co/C0726np/logo-blue.png"
                 alt=""
               />
@@ -80,7 +80,7 @@ const Navbar = () => {
                 </button>
               </Link>
             )}
-            <button onClick={toggleTheme} className=" px-3 py-2 gap-2 rounded-md bg-slate-500 flex hover:bg-gradient-to-r from-[#06beb6]  to-[#162028]"><img className=" h-6  " src="https://i.ibb.co/vXN6Dhz/day.png" alt="" /><img className=" h-5" src="https://i.ibb.co/hM67vHc/night.png" alt="" /></button>
+            <button onClick={toggleTheme} className=" px-3 py-1 md:py-3 lg:py-2 gap-2 rounded-md bg-slate-500 flex hover:bg-gradient-to-r from-[#06beb6]  to-[#162028]"><img className=" h-4 lg:h-6  " src="https://i.ibb.co/vXN6Dhz/day.png" alt="" /><img className=" h-3 lg:h-5" src="https://i.ibb.co/hM67vHc/night.png" alt="" /></button>
           </div>
         </div>
       </div>
