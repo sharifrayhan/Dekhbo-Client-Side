@@ -6,7 +6,7 @@ import { Context } from "../context/AllContext";
 
 const Login = () => {
 
-    const { handleLogin, handleGoogleSignIn } = useContext(Context);
+    const { handleLogin, handleGoogleSignIn, handleFacebookSignIn} = useContext(Context);
     const location = useLocation();
     const navigate = useNavigate();
   
@@ -72,6 +72,18 @@ const Login = () => {
               alt=""
             />
             Login with Google
+          </button>
+
+          <button
+            onClick={()=>handleFacebookSignIn( navigate, location)}
+            className="mt-2 text-white text-sm flex mb-2 items-center gap-1 rounded-md px-12 py-2 w-[270px] border-[0.1px] border-white"
+          >
+            <img
+              className="w-5 ml-3 rounded-full avatar"
+              src="https://i.ibb.co/nz5QPSH/fb-circle-icon.png"
+              alt=""
+            />
+            Login with Facebook
           </button>
         </center>
       </div>

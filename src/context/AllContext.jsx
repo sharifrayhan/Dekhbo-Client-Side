@@ -1,8 +1,7 @@
 import app from "../firebase/firebase.config"
-
 import Swal from 'sweetalert2'
 import { createContext, useEffect, useState } from "react";
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { FacebookAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 
 export const Context = createContext(null);
 const auth = getAuth(app);
@@ -173,7 +172,41 @@ const toggleTheme = () => {
           console.error(error);
         });
     };
+ 
+// Facebook login
 
+const facebookProvider = new FacebookAuthProvider();
+
+const facebookSignIn =  () =>{
+  return signInWithPopup(auth, facebookProvider)
+}
+
+const handleFacebookSignIn = (navigate,location) => {
+  facebookSignIn()
+  .then((result) => {
+    // The signed-in user info.
+    const user = result.user;
+    navigate(location?.state ? location.state : "/");
+
+    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    const credential = FacebookAuthProvider.credentialFromResult(result);
+    const accessToken = credential.accessToken;
+
+    // IdP data available using getAdditionalUserInfo(result)
+    // ...
+  })
+  .catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = FacebookAuthProvider.credentialFromError(error);
+
+    // ...
+  });
+}
 // import and create log out method
     
     const logOut = () => {
@@ -191,7 +224,9 @@ const toggleTheme = () => {
             registerError, 
             termsError,
             toggleTheme,
-            theme
+            theme,
+            googleSignIn,
+            handleFacebookSignIn
     }
     
     return <Context.Provider value={toAll}>{children}</Context.Provider>;
