@@ -3,8 +3,20 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Footer from "./Footer";
 import Navbar from "../components/Navbar";
+import Swal from 'sweetalert2'
 
 const UpdateProducts = () => {
+
+    const updateModal=()=>{
+        Swal.fire({
+            position: 'top-center',
+            icon: 'success',
+            title: 'Product Updated',
+            showConfirmButton: false,
+            timer: 1500,
+        });
+    }
+
     const getId = useParams();
     const { _id } = getId;
     console.log(_id)
@@ -13,7 +25,7 @@ const UpdateProducts = () => {
     // const [items, setItems] = useState([])
     
     // useEffect(() => {
-    //     fetch("http://localhost:3000/allproducts")
+    //     fetch("https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/allproducts")
     //     .then(res=> res.json())
     //     .then(data => setItems(data))
     // }, []);
@@ -52,7 +64,7 @@ const UpdateProducts = () => {
         console.log(newProduct)
 
         if (selectedBrand == "netflix"){
-            fetch('http://localhost:3000/netflix', {
+            fetch('https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/netflix', {
                 method: 'POST',
                 headers: {
                   'Content-Type' : 'application/json'
@@ -62,11 +74,14 @@ const UpdateProducts = () => {
               .then(res => res.json())
               .then(data => {
                 console.log(data)
+                if(data?.acknowledged){
+                    updateModal()
+                }
               })
         }
 
         if (selectedBrand == "hulu"){
-            fetch('http://localhost:3000/hulu', {
+            fetch('https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/hulu', {
                 method: 'POST',
                 headers: {
                   'Content-Type' : 'application/json'
@@ -76,11 +91,14 @@ const UpdateProducts = () => {
               .then(res => res.json())
               .then(data => {
                 console.log(data)
+                if(data?.acknowledged){
+                    updateModal()
+                }
               })
         }
 
         if (selectedBrand == "hbo"){
-            fetch('http://localhost:3000/hbo', {
+            fetch('https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/hbo', {
                 method: 'POST',
                 headers: {
                   'Content-Type' : 'application/json'
@@ -90,11 +108,14 @@ const UpdateProducts = () => {
               .then(res => res.json())
               .then(data => {
                 console.log(data)
+                if(data?.acknowledged){
+                    updateModal()
+                }
               })
         }
 
         if (selectedBrand == "chorki"){
-            fetch('http://localhost:3000/chorki', {
+            fetch('https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/chorki', {
                 method: 'POST',
                 headers: {
                   'Content-Type' : 'application/json'
@@ -104,11 +125,14 @@ const UpdateProducts = () => {
               .then(res => res.json())
               .then(data => {
                 console.log(data)
+                if(data?.acknowledged){
+                    updateModal()
+                }
               })
         }
 
         if (selectedBrand == "amazon"){
-            fetch('http://localhost:3000/amazon', {
+            fetch('https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/amazon', {
                 method: 'POST',
                 headers: {
                   'Content-Type' : 'application/json'
@@ -118,11 +142,14 @@ const UpdateProducts = () => {
               .then(res => res.json())
               .then(data => {
                 console.log(data)
+                if(data?.acknowledged){
+                    updateModal()
+                }
               })
         }
 
         if (selectedBrand == "disney"){
-            fetch('http://localhost:3000/disney', {
+            fetch('https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/disney', {
                 method: 'POST',
                 headers: {
                   'Content-Type' : 'application/json'
@@ -132,6 +159,9 @@ const UpdateProducts = () => {
               .then(res => res.json())
               .then(data => {
                 console.log(data)
+                if(data?.acknowledged){
+                    updateModal()
+                }
               })
         }
 

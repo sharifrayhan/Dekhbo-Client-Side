@@ -2,7 +2,10 @@
 import Footer from "./Footer";
 import Navbar from "../components/Navbar";
 
+
 const AddProducts = () => {
+
+
 
     const handleAddProduct = event => {
         event.preventDefault()
@@ -20,7 +23,7 @@ const AddProducts = () => {
         console.log(newProduct)
 
         if (selectedBrand == "netflix"){
-            fetch('http://localhost:3000/netflix', {
+            fetch('https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/netflix', {
                 method: 'POST',
                 headers: {
                   'Content-Type' : 'application/json'
@@ -34,7 +37,7 @@ const AddProducts = () => {
         }
 
         if (selectedBrand == "hulu"){
-            fetch('http://localhost:3000/hulu', {
+            fetch('https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/hulu', {
                 method: 'POST',
                 headers: {
                   'Content-Type' : 'application/json'
@@ -48,7 +51,7 @@ const AddProducts = () => {
         }
 
         if (selectedBrand == "hbo"){
-            fetch('http://localhost:3000/hbo', {
+            fetch('https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/hbo', {
                 method: 'POST',
                 headers: {
                   'Content-Type' : 'application/json'
@@ -62,7 +65,7 @@ const AddProducts = () => {
         }
 
         if (selectedBrand == "chorki"){
-            fetch('http://localhost:3000/chorki', {
+            fetch('https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/chorki', {
                 method: 'POST',
                 headers: {
                   'Content-Type' : 'application/json'
@@ -76,7 +79,7 @@ const AddProducts = () => {
         }
 
         if (selectedBrand == "amazon"){
-            fetch('http://localhost:3000/amazon', {
+            fetch('https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/amazon', {
                 method: 'POST',
                 headers: {
                   'Content-Type' : 'application/json'
@@ -90,7 +93,7 @@ const AddProducts = () => {
         }
 
         if (selectedBrand == "disney"){
-            fetch('http://localhost:3000/disney', {
+            fetch('https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/disney', {
                 method: 'POST',
                 headers: {
                   'Content-Type' : 'application/json'

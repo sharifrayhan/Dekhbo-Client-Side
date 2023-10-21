@@ -12,7 +12,7 @@ const Details = () => {
     const items = useLoaderData()
     // const [items, setItems] = useState([])
     // useEffect(() => {
-    //     fetch("http://localhost:3000/allproducts")
+    //     fetch("https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/allproducts")
     //     .then(res=> res.json())
     //     .then(data => setItems(data))
     // }, []);
@@ -42,9 +42,10 @@ const showError =()=>{
 
     const handleAddToCart = async () => {
         card.userEmail = userEmail;
+        delete card._id;
     
         try {
-            const response = await fetch('http://localhost:3000/cart', {
+            const response = await fetch('https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/cart', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

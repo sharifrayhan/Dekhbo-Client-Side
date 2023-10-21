@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useLocation, useNavigate } from "react-router-dom";
-
 import Navbar from "../components/Navbar";
 import { useContext } from "react";
 import { Context } from "../context/AllContext";

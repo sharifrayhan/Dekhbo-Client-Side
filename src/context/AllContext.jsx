@@ -39,6 +39,16 @@ const toggleTheme = () => {
           timer: 1500
         })
       }
+
+    const loginErrorModal = ()=>{
+        Swal.fire({
+          position: 'top-center',
+          icon: 'error',
+          title: 'Invalid Credentials',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
     
 
     useEffect(()=>{
@@ -130,8 +140,6 @@ const toggleTheme = () => {
         if (email === '' && password === '') {
           handleGoogleSignIn();
         } else {
-        
-      
           signIn(email, password, navigate, location)
             .then(result => {
               console.log(result.user);
@@ -140,7 +148,7 @@ const toggleTheme = () => {
             })
             .catch(error => {
               console.error(error.code);
-           
+              loginErrorModal()
             });
         }
       };

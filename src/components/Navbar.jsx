@@ -68,9 +68,9 @@ const Navbar = () => {
           </div>
           <div className="navbar-end flex gap-2">
           {user && userName && userPhoto && (
-            <div className=" flex items-center gap-2 glass px-3 p-1 rounded-md">
+            <div className=" md:flex lg:flex items-center gap-2 glass px-1 hidden lg:px-3 p-1 rounded-md">
               <img
-                className=" w-9 h-9 avatar rounded-full "
+                className=" w-5 h-5 md:w-8 md:h-8 lg:w-9 lg:h-9 avatar rounded-full "
                 src={userPhoto}
                 alt=""
               />
@@ -91,7 +91,7 @@ const Navbar = () => {
                 </button>
               </Link>
             )}
-            <button onClick={toggleTheme} className=" px-3 py-1 md:py-3 lg:py-2 gap-2 rounded-md bg-slate-500 flex hover:bg-gradient-to-r from-[#06beb6]  to-[#162028]"><img className=" h-4 lg:h-6  " src="https://i.ibb.co/vXN6Dhz/day.png" alt="" /><img className=" h-3 lg:h-5" src="https://i.ibb.co/hM67vHc/night.png" alt="" /></button>
+            <button onClick={toggleTheme} className=" px-1 lg:px-3 py-1 md:py-3 lg:py-2 gap-2 rounded-md bg-slate-500 flex items-center hover:bg-gradient-to-r from-[#06beb6]  to-[#162028]"><img className=" h-4 lg:h-6  " src="https://i.ibb.co/vXN6Dhz/day.png" alt="" /><img className=" h-3 lg:h-4" src="https://i.ibb.co/hM67vHc/night.png" alt="" /></button>
           </div>
         </div>
       </div>

@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         path: "/Details/:_id",
         element: 
           <PrivateRoute><Details></Details></PrivateRoute>,
-          loader: ()=> fetch("http://localhost:3000/allproducts"),
+          loader: ()=> fetch("https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/allproducts"),
       },
       {
         path: "/AddProducts",
@@ -38,13 +38,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/UpdateProducts/:_id",
-        element: <UpdateProducts></UpdateProducts>,
-        loader: () => fetch("http://localhost:3000/allproducts"),
+        element: <PrivateRoute><UpdateProducts></UpdateProducts></PrivateRoute> ,
+        loader: () => fetch("https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/allproducts"),
       },
       {
         path: "/MyCart",
         element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader: () => fetch("http://localhost:3000/cart")
+        loader: () => fetch("https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/cart")
       },
       {
         path: "/Login",
@@ -57,32 +57,32 @@ const router = createBrowserRouter([
       {
         path: "/5",
         element: <Amazon></Amazon>,
-        loader: () => fetch('http://localhost:3000/amazon'),
+        loader: () => fetch('https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/amazon'),
       },
       {
         path: "/3",
         element: <Chorki></Chorki>,
-        loader: () => fetch('http://localhost:3000/chorki'),
+        loader: () => fetch('https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/chorki'),
       },
       {
         path: "/2",
         element: <Disney></Disney>,
-        loader: () => fetch('http://localhost:3000/disney'),
+        loader: () => fetch('https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/disney'),
       },
       {
         path: "/4",
         element: <Hulu></Hulu>,
-        loader: () => fetch('http://localhost:3000/hulu'),
+        loader: () => fetch('https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/hulu'),
       },
       {
         path: "/6",
         element: <Hbo></Hbo>,
-        loader: () => fetch('http://localhost:3000/hbo'),
+        loader: () => fetch('https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/hbo'),
       },
       {
         path: "/1",
         element: <Netflix></Netflix>,
-        loader: () => fetch('http://localhost:3000/netflix'),
+        loader: () => fetch('https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/netflix'),
       },
     ],
   },

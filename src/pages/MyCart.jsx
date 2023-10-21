@@ -12,7 +12,7 @@ const MyCart = () => {
     const items = useLoaderData()
     // const [items, setItems] = useState([])
     // useEffect(()=>{
-    //     fetch("http://localhost:3000/cart")
+    //     fetch("https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/cart")
     //     .then(res => res.json)
     //     .then(data => setItems(data))
     // },[items])
@@ -45,11 +45,12 @@ const MyCart = () => {
           }).then((result) => {
             if (result.isConfirmed) {
 
-            fetch(`http://localhost:3000/cart/${_id}`, {
+            fetch(`https://assignment-10-server-287lva8z0-sharif-rayhan-nafis-projects.vercel.app/cart/${_id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())
             .then(data => {
+                console.log(data)
                 if (data.deletedCount>0){
               Swal.fire(
                 'Deleted!',
@@ -70,18 +71,18 @@ const MyCart = () => {
     }
 
     return (
-        <div>
+        <div className="  ">
             <Navbar></Navbar>
-            <div className="flex flex-col h-screen items-center justify-start  p-5 bg-[url(https://i.ibb.co/2MYfNMW/white.jpg)] bg-cover ">
+            <div className="flex flex-col  items-center justify-start  p-5 ">
             {
                 userItems.length > 0 ? (
                     userItems.map((userItem) => (
                         <div key={userItem?._id} className='flex items-center justify-center rounded-md p-5 '>
-                            <div className='rounded-md flex gap-3 p-5 bg-[#162028] w-[300px] md:w-[700px] lg:w-[1000px]'>
+                            <div className='rounded-md flex gap-3 p-5 bg-[#162028] w-[270px] md:w-[700px] lg:w-[1000px]'>
                                 <img className='rounded-md h-[100px] lg:h-[200px]' src={userItem?.image} alt="" />
                                 <div>
                                     <p className='font-bold text-md md:text-xl lg:text-2xl text-[#DADC55]'>{userItem?.name}</p>
-                                    <p className='text-white'>Price: {userItem?.price}</p>
+                                    <p className='text-white text-sm md:text-base lg:text-base'>Price: {userItem?.price}</p>
                                     <p className='text-white'>{userItem?.description}</p>
                                     <p className='text-white'>{userItem?.rating}</p>
                                     <button className="bg-blue-500 text-white font-semibold py-1 px-2 rounded hover:bg-blue-600" onClick={() => handleDeleteItem(userItem?._id)}>
