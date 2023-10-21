@@ -1,5 +1,5 @@
+import app from "../firebase/firebase.config"
 
-import app from "../firebase/Firebase.config";
 import Swal from 'sweetalert2'
 import { createContext, useEffect, useState } from "react";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
