@@ -21,7 +21,7 @@ const toggleTheme = () => {
 
     const registerSuccessModal = ()=>{
         Swal.fire({
-          position: 'top-center',
+          position: 'center',
           icon: 'success',
           title: 'Registration Successfull, Please Login to continue',
           showConfirmButton: false,
@@ -31,7 +31,7 @@ const toggleTheme = () => {
 
     const loginSuccessModal = ()=>{
         Swal.fire({
-          position: 'top-center',
+          position: 'center',
           icon: 'success',
           title: 'Successfully Logged in',
           showConfirmButton: false,
@@ -41,7 +41,7 @@ const toggleTheme = () => {
 
     const loginErrorModal = ()=>{
         Swal.fire({
-          position: 'top-center',
+          position: 'center',
           icon: 'error',
           title: 'Invalid Credentials',
           showConfirmButton: false,
@@ -160,16 +160,18 @@ const toggleTheme = () => {
     const googleSignIn = () => {
         return signInWithPopup(auth, googleProvider)
     }
-
+console.log(auth)
 // Handle google sign in user
     const handleGoogleSignIn = (navigate,location) => {
       googleSignIn()
         .then((result) => {
           console.log(result.user);
+          result.getStatusCode()
           navigate(location?.state ? location.state : "/");
         })
         .catch((error) => {
           console.error(error);
+         
         });
     };
  

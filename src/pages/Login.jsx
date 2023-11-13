@@ -9,6 +9,7 @@ const Login = () => {
     const { handleLogin, handleGoogleSignIn, handleFacebookSignIn} = useContext(Context);
     const location = useLocation();
     const navigate = useNavigate();
+
   
     return (
         <div className=" h-screen max-h-full max-width-full w-screen  bg-[url(https://i.ibb.co/2MYfNMW/white.jpg)] bg-cover ">

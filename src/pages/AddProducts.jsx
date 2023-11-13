@@ -192,7 +192,7 @@ const AddProducts = () => {
                                     name="brand"
                                     // value={coffeeData.chef}
                                     // onChange={handleInputChange}
-                                    placeholder="Enter Chef"
+                                    placeholder="Enter Brand"
                                     className="w-full border rounded px-3 py-2 "
                                 />
                                 </div>
@@ -209,7 +209,7 @@ const AddProducts = () => {
                                     name="type"
                                     // value={coffeeData.supplier}
                                     // onChange={handleInputChange}
-                                    placeholder="Enter Supplier"
+                                    placeholder="Enter Type"
                                     className="w-full border rounded px-3 py-2 "
                                 />
                                 </div>
@@ -222,7 +222,7 @@ const AddProducts = () => {
                                     name="price"
                                     // value={coffeeData.taste}
                                     // onChange={handleInputChange}
-                                    placeholder="Enter Taste"
+                                    placeholder="Enter Price"
                                     className="w-full border rounded px-3 py-2"
                                 />
                                 </div>
@@ -239,7 +239,7 @@ const AddProducts = () => {
                                     name="rating"
                                     // value={coffeeData.category}
                                     // onChange={handleInputChange}
-                                    placeholder="Enter Category"
+                                    placeholder="Enter Rating"
                                     className="w-full border rounded px-3 py-2"
                                 />
                                 </div>

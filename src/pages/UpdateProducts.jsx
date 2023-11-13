@@ -252,7 +252,7 @@ const UpdateProducts = () => {
                                     name="brand"
                                     // value={coffeeData.chef}
                                     // onChange={handleInputChange}
-                                    placeholder="Enter Chef"
+                                    placeholder="Enter Brand"
                                     defaultValue={card?.brandName}
                                     className="w-full border rounded px-3 py-2 "
                                 />
@@ -270,7 +270,7 @@ const UpdateProducts = () => {
                                     name="type"
                                     // value={coffeeData.supplier}
                                     // onChange={handleInputChange}
-                                    placeholder="Enter Supplier"
+                                    placeholder="Enter Type"
                                     defaultValue={card?.type}
                                     className="w-full border rounded px-3 py-2 "
                                 />
@@ -284,7 +284,7 @@ const UpdateProducts = () => {
                                     name="price"
                                     // value={coffeeData.taste}
                                     // onChange={handleInputChange}
-                                    placeholder="Enter Taste"
+                                    placeholder="Enter Price"
                                     defaultValue={card?.price}
                                     className="w-full border rounded px-3 py-2"
                                 />
@@ -302,7 +302,7 @@ const UpdateProducts = () => {
                                     name="rating"
                                     // value={coffeeData.category}
                                     // onChange={handleInputChange}
-                                    placeholder="Enter Category"
+                                    placeholder="Enter Rating"
                                     defaultValue={card?.rating}
                                     className="w-full border rounded px-3 py-2"
                                 />
