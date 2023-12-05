@@ -18,4 +18,4 @@ Ans:
  
 
 # Project Live Link
-https://assignment-10-9f0d8.web.app
+https://dekhbo-client-sharifrayhan.netlify.app
